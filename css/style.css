@@ -1,0 +1,200 @@
+/* --- Variabel Warna --- */
+:root {
+    --color-primary: #4CAF50;    /* Hijau Cerah */
+    --color-secondary: #FFC107;  /* Kuning Cerah (Aksen) */
+    --color-accent: #03A9F4;     /* Biru Muda (Aksen Sekunder) */
+    --color-dark: #333333;       /* Teks Gelap */
+    --color-light: #F9F9F9;      /* Latar Belakang Terang */
+    --font-family-lux: 'Poppins', sans-serif; /* Font Modern */
+}
+
+/* --- Reset Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-lux);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    transition: background-color 0.3s;
+}
+
+/* --- Teks dan Tipografi Lux --- */
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; color: var(--color-primary); }
+
+/* --- Header & Navigasi Responsif --- */
+header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--color-dark);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* --- Tombol Utama (Button) --- */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #388E3C; /* Hijau Lebih Gelap */
+    transform: translateY(-2px);
+}
+
+/* --- Layout Konten Utama (Responsif) --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 10px; /* Sudut membulat untuk kesan lux */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* --- Hero Section Ceria --- */
+#hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8BC34A 100%); /* Gradien Ceria */
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); /* Bentuk unik */
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+#hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Grid Informasi (Responsif) --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.card {
+    padding: 1.5rem;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card .icon {
+    font-size: 3rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--color-dark);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+}
+
+/* --- Media Queries (Kunci Responsif) --- */
+@media (max-width: 768px) {
+    /* Penyesuaian untuk Tablet dan Mobile */
+    
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 0.5rem 0;
+        margin-left: 0;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Penyesuaian untuk Mobile Kecil */
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    
+    #hero {
+        padding: 4rem 1rem;
+    }
+}
